@@ -21,4 +21,5 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin','namespace' => 'admin'], function () {
       Route::get('dashbored', 'PanelController@masterpanel')->name('dashbored');
       Route::get('users', 'PanelController@masterstarter')->name('starter');
+      Route::resource('/articles' , 'ArticleController');
 });

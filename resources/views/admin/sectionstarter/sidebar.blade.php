@@ -1,10 +1,11 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
     <!-- Brand Logo -->
     <a href="{{ route('dashbored') }}" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">پنل مدیریت</span>
+      <span class="brand-text font-weight-light">داشبورد مدیریت</span>
     </a>
 
     <!-- Sidebar -->
@@ -16,7 +17,7 @@
             <img src="https://www.gravatar.com/avatar/52f0fbcbedee04a121cba8dad1174462?s=200&d=mm&r=g" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="{{ route('dashbored') }}" class="d-block">داشبورت چارت</a>
+            <a href="{{ route('dashbored') }}" class="d-block">اسم کاربر ادیمن</a>
           </div>
         </div>
 
@@ -25,7 +26,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-            <li class="nav-item has-treeview menu-open">
+            {{-- <li class="nav-item has-treeview menu-open">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fa fa-dashboard"></i>
                 <p>
@@ -47,16 +48,22 @@
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> --}}
+
+
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-th"></i>
+              <a href="{{ route('articles.index') }}" class="nav-link">
+                <i class="nav-icon fa fa-book"></i>
                 <p>
-                  لینک ساده
+                    مدیریت  مقالات
                   <span class="right badge badge-danger">جدید</span>
                 </p>
               </a>
             </li>
+
+
+
+
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
