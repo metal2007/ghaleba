@@ -1,6 +1,6 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>CopyLeft &copy; 2018 <a href="http://github.com/hesammousavi/">حسام موسوی</a>.</strong>
+    <strong>CopyLeft &copy; 2018 <a href="">mr a.n </a>.</strong>
   </footer>
 
   <!-- Control Sidebar -->

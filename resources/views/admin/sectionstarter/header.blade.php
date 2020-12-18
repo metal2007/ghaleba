@@ -12,17 +12,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>پنل مدیریت | شروع سریع</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ asset('admin/plugins/font-awesome/css/font-awesome.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
   <!-- bootstrap rtl -->
-  <link rel="stylesheet" href="dist/css/bootstrap-rtl.min.css">
+  <link rel="stylesheet" href="{{ asset('admin/dist/css/bootstrap-rtl.min.css')}}">
   <!-- template rtl version -->
-  <link rel="stylesheet" href="dist/css/custom-style.css">
+  <link rel="stylesheet" href="{{ asset('admin/dist/css/custom-style.css')}}">
 
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="{{ asset('admin/hold-transition sidebar-mini')}}">
 <div class="wrapper">

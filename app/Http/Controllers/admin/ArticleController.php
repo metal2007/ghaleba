@@ -16,7 +16,8 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::latest()->get();
-        return view('admin.articles.index', compact('articles'));    }
+        return view('admin.articles.index', compact('articles'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +26,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.articles.create');
     }
 
     /**
