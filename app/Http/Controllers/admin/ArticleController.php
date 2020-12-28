@@ -26,6 +26,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
+        //فقط صفحه کریت رو باز میکنه
+        //در صفحه کریت
         return view('admin.articles.create');
     }
 
