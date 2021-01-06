@@ -36,34 +36,42 @@
   نکته مهم بعدی برای توکن هم از سی اس ار توکن باید استفاده کنیم --}}
   <form  class="form-horizontal"  action="{{ route('articles.store') }}" method="post" enctype="multipart/form-data">
 @csrf
-{{-- @include('admin.section.errors') --}}
+@include('admin.sectionstarter.errors')
 
 
-    <div class="form-group">
+    <div class="form-group" >
         <lable for="title" class="control-lablae">عنوان مقاله</lable>
         <input type="text" class="form-control" name="title" id="title" placeholder="عنوان را وارد کنید" value="{{ old('title') }}">
+        <small class="text-danger">{{ $errors->first('title') }}</small>
     </div>
 
     <div class="form-group">
          <lable for="description" class="control-lable">توضیحات کوتاه</lable>
          <textarea  rows="3"  class="form-control" name="description" id="description" placeholder="توضیحات را وارد کنید" >{{ old('description') }}</textarea>
+         <small class="text-danger">{{ $errors->first('description') }}</small>
+
     </div>
 
       <div class="form-group">
          <lable for="body" class="control-lable">متن مقاله </lable>
-         <textarea rows="5" class="form-control" name="body" id="body"  placeholder="متن مقاله وارد کنید"  value="{{ old('body')}}"></textarea>
+         <textarea rows="5" class="form-control" name="body" id="body"  placeholder="متن مقاله وارد کنید" >{{ old('body') }}</textarea>
+         <small class="text-danger">{{ $errors->first('body') }}</small>
+
     </div>
 
 
  <div class="row form-group">
        <div class="col-sm-6">
              <lable for="images" class="control-lable">تصویر مقاله</lable>
-            <input  type="file" class="form-control" name="images" id="images" placeholder="تصویر  مقاله را وارد کنید"  value="{{ old('images')}}">
+            <input  type="file" class="form-control" name="images" id="images" placeholder="تصویر  مقاله را وارد کنید"  value="{{ old('images') }}">
+            <small class="text-danger">{{ $errors->first('images') }}</small>
        </div>
 
        <div class="col-sm-6">
              <lable for="tags" class="control-lable">تگ ها</lable>
             <input  type="text" class="form-control" name="tags" id="tags" placeholder="تگ ها مقاله را وارد کنید"  value="{{ old('tags') }}">
+            <small class="text-danger">{{ $errors->first('tags') }}</small>
+
        </div>
     </div>
   </div>
