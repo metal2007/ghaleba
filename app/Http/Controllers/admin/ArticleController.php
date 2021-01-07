@@ -91,7 +91,6 @@ class ArticleController extends AdminController //ادیمن کنترلر بجا
         return view('admin.articles.edit', compact('article'));
 
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -101,35 +100,28 @@ class ArticleController extends AdminController //ادیمن کنترلر بجا
      */
     // public function update(Request $request, Article $article)
     public function update(ArticleRequest $request,Article $article)
-
     {
-    //  return $request->all();
-    // شرط میزاریم میگیم اگه فایلی به اسم ایمچ وجود داشت عملیات ایمچی که در کنترلر ایمچ ساختیم برایه کریت رو دوباره انجام بده
-    $file = $request->file('images');
-    //برایه راحتی میگیم همه اطلاعات رو بگیر
-    $inputs = $request->all();
-    if($file){
- //میگیم از اینپوتز که شامل همه دادهای از نوشتاری تا عکس هستش بیا ایمچش رو بگیر
-        $inputs['images'] = $this->uploadimages($request->file('images'));
-    }else{      //اگه ایمچ وجود نداشت
-        $inputs['images'] = $article->images;  //میگیم اینپون ایمچی که خاله رو برابر با اطلاعات ایمچ دیتابیس قرار  بده
-//تصوییر شاخص باید از ابتدا مشخص بشه چون ما یا عکس جدید داریم یا از عکسهای قدیمی برایه باز نویسی دوباره رویه دیتابیس استفاده کردیم
-//ایمچ تامپ همون اطلاهات فرم ایمچ در صفغحه ادیت هستش که میگیم مساوی با تصویر شاخص قرار بده
-       $inputs['images']['thumb'] = $inputs['imagesThumb'];
-        }
-         unset($inputs['imagesThumb']);    //برایه پاک کردن داده  ایمچ از دیتابیس
-         foreach ($article->images['images'] as $key=>$image){ #برایه پاک کردن عکس از پوشه
+        $file = $request->file('images');
+        $inputs = $request->all();
 
-            //     echo "<img src='{$image}' height='100' width='200' />";
-            //     unlink(public_path() . $image );
-             if (file_exists(public_path() . $image)) {
-                 unlink(public_path() . $image);
-   }
-          }
-               //تمام اینپوتهایه بالا رو به ارتیکل میدیم برایه آپدیت
-            $article->update($inputs);
-             return redirect()->back();
+        if($file) {
+            $inputs['images'] = $this->uploadImages($request->file('images'));
+                     foreach ($article->images['images'] as $key=>$image){
+                   if (file_exists(public_path() . $image)) {
+                       unlink(public_path() . $image);
+                                    }
+                                    }
+          } else {
+            $inputs['images'] = $article->images;
+            $inputs['images']['thumb'] = $inputs['imagesThumb'];
+
         }
+
+        unset($inputs['imagesThumb']);
+        $article->update($inputs);
+
+        return redirect(route('articles.index'));
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -148,7 +140,7 @@ class ArticleController extends AdminController //ادیمن کنترلر بجا
            if (file_exists(public_path() . $image)) {
                unlink(public_path() . $image);
                             }
-                                                            }
+            }
     }
     // return Redirect::back()->withErrors(['success', 'The Message']);
     return Redirect::back()->withErrors(['مقاله بدرستی پاک شد']);

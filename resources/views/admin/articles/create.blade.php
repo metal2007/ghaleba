@@ -41,7 +41,7 @@
 
     <div class="form-group" >
         <lable for="title" class="control-lablae">عنوان مقاله</lable>
-        <input type="text" class="form-control" name="title" id="title" placeholder="عنوان را وارد کنید" value="{{ old('title') }}">
+        <input type="text" class="form-control" name="title" id="title"  placeholder="عنوان را وارد کنید" value="{{ old('title') }}">
         <small class="text-danger">{{ $errors->first('title') }}</small>
     </div>
 

@@ -23,23 +23,34 @@ class ArticleRequest extends FormRequest
      */
     public function rules()
     {
-        if($this->method() == 'post'){
+if($this->method() == 'post'){
             return [
             'title' =>'required|max:250',
-            'description' =>'required|max:250',
+            'description' =>'required|max:400',
             'body' =>'required',
             'images' =>'required| mimes:jpg,jpeg,png,bmp',
-            'tags' =>'required',
+            'tags' =>'required|max:50',
 
             //
         ];
-    }
-        return [
-            'title' => 'required|max:250',
-            'description' => 'required',
-            'body' => 'required',
-            'images' => 'required|mimes:jpeg,png,bmp',
-            'tags' => 'required',
-        ];
-    }
 }
+        return [
+            'title' =>'required|max:250',
+            'description' =>'required|max:400',
+            'body' =>'required',
+            'tags' =>'required|max:50',
+            //
+        ];
+}
+}
+//     public function rules()
+//     {
+//         return [
+//             'title' => 'required|max:250',
+//             'description' => 'required',
+//             'body' => 'required',
+//             'images' => 'required|mimes:jpeg,png,bmp',
+//             'tags' => 'required',
+//         ];
+//     }
+// }

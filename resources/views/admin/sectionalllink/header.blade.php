@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="dist/css/bootstrap-rtl.min.css">
   <!-- template rtl version -->
   <link rel="stylesheet" href="dist/css/custom-style.css">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body class="hold-transition sidebar-mini">

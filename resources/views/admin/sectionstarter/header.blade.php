@@ -17,11 +17,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
   <!-- bootstrap rtl -->
   <link rel="stylesheet" href="{{ asset('admin/dist/css/bootstrap-rtl.min.css')}}">
   <!-- template rtl version -->
   <link rel="stylesheet" href="{{ asset('admin/dist/css/custom-style.css')}}">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
 <body class="{{ asset('admin/hold-transition sidebar-mini')}}">
